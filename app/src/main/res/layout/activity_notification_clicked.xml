@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/glass"
+    tools:context="com.tah.touchaheart.app.service.NotificationClicked">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="25dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textnotificationHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textAllCaps="true"
+                android:text="HELLO r_email YOUR NEED HAS BEEN MET!"
+                android:textAlignment="center"
+                android:textColor="#f5226849"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textnotification_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textnotificationHeading"
+                android:layout_marginTop="26dp"
+                android:text="D_EMAIL donated QUANTITY CONDITION TYPE of size SIZE to satisfy your need.Please hurry to our LOCATION Office and pick what belongs to you."
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</ScrollView>
+
+
+</RelativeLayout>

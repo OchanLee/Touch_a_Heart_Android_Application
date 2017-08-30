@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tah.touchaheart">
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/tah"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/tah"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".app.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        SplashScreen
+
+        <activity android:name=".app.LoginActivity">
+
+        </activity>
+
+
+        <activity android:name=".app.RegisterActivity" />
+        <activity
+            android:name=".app.MainTabbedActivity"
+            android:label="@string/title_activity_main_tabbed"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".app.ClothesActivity" />
+        <activity android:name=".app.ShoesActivity" />
+        <activity android:name=".app.ShoesDonateActivity" />
+        <activity android:name=".app.ClothesDonateActivity" />
+        <activity android:name=".app.retrieve.DetailActivity" />
+
+        <service
+            android:name=".app.service.MyService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity android:name=".app.service.NotificationClicked" />
+
+    </application>
+
+</manifest>

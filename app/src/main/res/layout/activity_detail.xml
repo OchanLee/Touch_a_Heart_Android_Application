@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tah.touchaheart.app.Tab3Create"
+    android:background="@drawable/good"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp"
+        >
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_margin="7dp"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="25dp"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+       >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:id="@+id/donateImage"
+            android:padding="10dp"
+            android:src="@drawable/clothes"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:id="@+id/descriptionlabel"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name is going Name is going Name is going Name is going Name is going Name is going Name is going Name is going Name is going Name is going Name is going Name is going vvName is going"
+            android:id="@+id/descriptionfull"
+            android:padding="0dp"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Email ID:"
+            android:id="@+id/emaillabel"
+            android:padding="0dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="emailtext"
+            android:id="@+id/emailtext"
+            android:padding="0dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Type:"
+            android:id="@+id/typelabel"
+            android:padding="0dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="typetext"
+            android:id="@+id/typetext"
+            android:padding="0dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity:"
+            android:id="@+id/quantitylabel"
+            android:padding="0dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="quantitytext"
+            android:id="@+id/quantitytext"
+            android:padding="0dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gender:"
+            android:id="@+id/genderlabel"
+            android:padding="0dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="gendertext"
+            android:id="@+id/gendertext"
+            android:padding="0dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Size:"
+            android:id="@+id/sizelabel"
+            android:padding="0dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sizetext"
+            android:id="@+id/sizetext"
+            android:padding="0dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Condition:"
+            android:id="@+id/conditionlabel"
+            android:padding="0dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="conditiontext"
+            android:id="@+id/conditiontext"
+            android:padding="0dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location:"
+            android:id="@+id/locationlabel"
+            android:padding="0dp"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="locationtext"
+            android:id="@+id/locationtext"
+            android:padding="0dp"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#333"
+            />
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+</RelativeLayout>

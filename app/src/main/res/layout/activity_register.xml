@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/good"
+    tools:context="com.tah.touchaheart.app.RegisterActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="#f12e3dd9"
+
+        />
+
+    <TextView
+        android:id="@+id/welcome_txt1"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="@string/registertxt"
+        android:textColor="@color/textColor"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_name"
+            android:textSize="18sp"
+            android:textColor="#5bab63"
+            android:id="@+id/tx1"
+            android:layout_alignParentLeft="true"
+
+            />
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/textColor"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tx1"
+            app:backgroundTint="@color/textColor"
+            android:id="@+id/reg_name"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_email"
+            android:textColor="#5bab63"
+            android:textSize="18sp"
+            android:id="@+id/tx2"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/reg_name"
+            android:layout_marginTop="10dp"
+
+            />
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@id/tx2"
+            android:id="@+id/reg_email"
+            android:inputType="textEmailAddress"
+            app:backgroundTint="@color/textColor"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_password"
+            android:textColor="#5bab63"
+            android:textSize="18sp"
+            android:id="@+id/tx3"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/reg_email"
+            android:layout_marginTop="10dp"
+
+            />
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@id/tx3"
+            android:id="@+id/reg_password"
+            android:inputType="textPassword"
+            app:backgroundTint="@color/textColor"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_con_password"
+            android:textColor="#5bab63"
+            android:textSize="18sp"
+            android:id="@+id/tx4"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/reg_password"
+            android:layout_marginTop="10dp"
+
+            />
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:layout_below="@id/tx4"
+            android:id="@+id/reg_con_password"
+            android:inputType="textPassword"
+            app:backgroundTint="@color/textColor"
+
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reg_bn_label"
+            style="?android:textAppearanceSmall"
+            android:id="@+id/reg_button"
+            android:layout_below="@id/reg_con_password"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_selector"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"
+
+            />
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

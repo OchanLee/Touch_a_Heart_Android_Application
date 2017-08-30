@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.tah.touchaheart.app.LoginActivity"
+    android:orientation="vertical"
+    android:background="@drawable/good">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="30dp"
+        android:textColor="#f12e3dd9"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+
+        />
+
+    <TextView
+        android:id="@+id/welcome_txt1"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:text="@string/logintxt"
+        android:textColor="@color/textColor"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_email"
+            android:textSize="20sp"
+            android:textColor="#5bab63"
+            android:id="@+id/tx1"
+            android:layout_alignParentLeft="true"
+
+            />
+        <android.support.v7.widget.AppCompatEditText
+            android:maxLines="1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/bestemail"
+            android:drawablePadding="15dp"
+            android:gravity="center_vertical"
+            android:hint="Enter your Email"
+            android:inputType="textEmailAddress"
+            android:padding="20dp"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            android:textSize="16sp"
+            android:layout_below="@id/tx1"
+            android:id="@+id/email"
+            app:backgroundTint="@color/textColor"
+
+
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prompt_password"
+            android:textSize="20sp"
+            android:textColor="#5bab63"
+            android:id="@+id/tx2"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/email"
+
+            />
+        <android.support.v7.widget.AppCompatEditText
+            android:maxLines="1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/bestpass"
+            android:drawablePadding="15dp"
+            android:gravity="center_vertical"
+            android:hint="Enter your Password"
+            android:inputType="textEmailAddress"
+            android:padding="20dp"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            android:textSize="16sp"
+            android:layout_below="@id/tx2"
+            android:id="@+id/password"
+            app:backgroundTint="@color/textColor"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_bn_label"
+            style="?android:textAppearanceSmall"
+            android:textStyle="bold"
+            android:layout_below="@id/password"
+            android:layout_marginTop="35dp"
+            android:id="@+id/login_button"
+            android:textColor="@color/textColor"
+            android:background="@drawable/button_selector"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textColor="#5bab63"
+            android:gravity="center"
+            android:text="@string/sign_up_text"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+   
+
+
+</LinearLayout>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginBottom="30dp"
+    android:layout_marginTop="5dp"
+    tools:context="com.tah.touchaheart.app.ClothesActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:text="Clothes"
+        android:textStyle="bold"
+        android:textColor="#ff000000"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtclothesheaddonate"/>
+
+    <Button
+        android:id="@+id/capture_button_donate"
+        style="?android:textAppearanceSmall"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtclothesheaddonate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/textColor"
+        android:background="@drawable/button_selector"
+        android:text="@string/capture_btn"
+
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/capture_button_donate"
+        android:layout_marginTop="20dp"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/clothes"
+                android:id="@+id/imageclothesdonate"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remail"
+                android:textColor="#333"
+                android:layout_below="@id/imageclothesdonate"
+                android:layout_marginTop="10dp"
+                android:textSize="19sp"
+                android:id="@+id/donatorEmail"
+                android:layout_alignParentLeft="true"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="false"
+                android:id="@+id/editdonatoremaildonate"
+                android:inputType="textEmailAddress"
+                android:layout_below="@id/donatorEmail"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/receipientEmail"
+                android:layout_below="@id/editdonatoremaildonate"
+                android:textSize="19sp"
+                android:id="@+id/receipientEmail"
+                android:layout_alignParentLeft="true"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="false"
+                android:id="@+id/editreceipientmaildonate"
+                android:inputType="textEmailAddress"
+                android:layout_below="@id/receipientEmail"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/type"
+                android:layout_below="@id/editreceipientmaildonate"
+                android:textSize="19sp"
+                android:id="@+id/typedonate"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:layout_toStartOf="@+id/editreceipientmaildonate"
+                android:layout_alignRight="@+id/quantitydonate"
+                android:layout_alignEnd="@+id/quantitydonate"
+                android:layout_toLeftOf="@+id/editreceipientmaildonate" />
+
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:id="@+id/spinnertypedonate"
+                android:layout_marginLeft="28dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editreceipientmaildonate"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/typedonate"
+                android:layout_alignParentRight="true"
+                >
+            </Spinner>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gender"
+                android:layout_below="@id/typedonate"
+                android:textSize="19sp"
+                android:id="@+id/genderdonate"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="40dp"
+                android:layout_toStartOf="@+id/spinnertypedonate"
+                android:layout_alignRight="@+id/quantitydonate"
+                android:layout_alignEnd="@+id/quantitydonate"
+                android:layout_toLeftOf="@+id/spinnertypedonate" />
+
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:id="@+id/spinnergenderdonate"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/typedonate"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignLeft="@+id/spinnertypedonate"
+                android:layout_alignStart="@+id/spinnertypedonate">
+            </Spinner>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quantity"
+                android:layout_below="@id/genderdonate"
+                android:textSize="19sp"
+                android:id="@+id/quantitydonate"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="40dp"
+                android:layout_toLeftOf="@+id/spinnersizedonate"
+                android:layout_toStartOf="@+id/spinnersizedonate" />
+
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:id="@+id/spinnerquantitydonate"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/genderdonate"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignLeft="@+id/spinnergenderdonate"
+                android:layout_alignStart="@+id/spinnergenderdonate">
+            </Spinner>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/size"
+                android:layout_below="@id/quantitydonate"
+                android:textSize="19sp"
+                android:id="@+id/sizedonate"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="40dp"
+                android:layout_toLeftOf="@+id/spinnersizedonate"
+                android:layout_toStartOf="@+id/spinnersizedonate" />
+
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:id="@+id/spinnersizedonate"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/quantitydonate"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/locationdonate"
+                android:layout_toEndOf="@+id/locationdonate">
+            </Spinner>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/condition"
+                android:layout_below="@id/sizedonate"
+                android:textSize="19sp"
+                android:id="@+id/condonate"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="40dp"
+                android:layout_toLeftOf="@+id/spinnersizedonate"
+                android:layout_toStartOf="@+id/spinnersizedonate" />
+
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:id="@+id/spinnercondonate"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sizedonate"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignLeft="@+id/spinnersizedonate"
+                android:layout_alignStart="@+id/spinnersizedonate">
+
+            </Spinner>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                android:layout_below="@id/condonate"
+                android:textSize="19sp"
+                android:id="@+id/locationdonate"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="40dp"
+                />
+
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:id="@+id/spinnerlocationdonate"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/condonate"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignLeft="@+id/spinnercondonate"
+                android:layout_alignStart="@+id/spinnercondonate">
+            </Spinner>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/clothes_reg_btn"
+                style="?android:textAppearanceSmall"
+                android:id="@+id/clothes_button_donate"
+                android:layout_below="@id/locationdonate"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_selector"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"
+
+                />
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

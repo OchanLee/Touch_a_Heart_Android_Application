@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginBottom="30dp"
+    android:layout_marginTop="5dp"
+    tools:context="com.tah.touchaheart.app.ClothesActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:text="Clothes"
+        android:textStyle="bold"
+        android:textColor="#ff000000"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtclotheshead"/>
+
+    <ImageView
+        android:id="@+id/imageclothes"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/txtclotheshead"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/clothes" />
+    
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageclothes"
+        android:layout_marginTop="20dp"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remail"
+        android:textColor="#333"
+        android:textSize="19sp"
+        android:id="@+id/receiverEmail"
+        android:layout_alignParentLeft="true"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:id="@+id/editremail"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/receiverEmail"
+     />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/describe"
+        android:textSize="19sp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/editremail"
+        android:id="@+id/description"
+        android:layout_alignParentLeft="true"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description"
+        android:layout_marginTop="10dp"
+        android:id="@+id/desctext"
+        android:inputType="textMultiLine"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/type"
+        android:layout_below="@id/desctext"
+        android:textSize="19sp"
+        android:id="@+id/type"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@+id/editremail"
+        android:layout_alignRight="@+id/quantity"
+        android:layout_alignEnd="@+id/quantity"
+        android:layout_toLeftOf="@+id/editremail" />
+
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:id="@+id/spinnertype"
+        android:layout_marginLeft="28dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/desctext"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/type"
+        android:layout_alignParentRight="true"
+        >
+    </Spinner>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender"
+        android:layout_below="@id/type"
+        android:textSize="19sp"
+        android:id="@+id/gender"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="40dp"
+        android:layout_toStartOf="@+id/spinnertype"
+        android:layout_alignRight="@+id/quantity"
+        android:layout_alignEnd="@+id/quantity"
+        android:layout_toLeftOf="@+id/spinnertype" />
+
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:id="@+id/spinnergender"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/type"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignLeft="@+id/spinnertype"
+        android:layout_alignStart="@+id/spinnertype">
+    </Spinner>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quantity"
+        android:layout_below="@id/gender"
+        android:textSize="19sp"
+        android:id="@+id/quantity"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="40dp"
+        android:layout_toLeftOf="@+id/spinnersize"
+        android:layout_toStartOf="@+id/spinnersize" />
+
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:id="@+id/spinnerquantity"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gender"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignLeft="@+id/spinnergender"
+        android:layout_alignStart="@+id/spinnergender">
+    </Spinner>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/size"
+        android:layout_below="@id/quantity"
+        android:textSize="19sp"
+        android:id="@+id/size"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="40dp"
+        android:layout_toLeftOf="@+id/spinnersize"
+        android:layout_toStartOf="@+id/spinnersize" />
+
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:id="@+id/spinnersize"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/quantity"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/location"
+        android:layout_toEndOf="@+id/location">
+    </Spinner>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/condition"
+                android:layout_below="@id/size"
+                android:textSize="19sp"
+                android:id="@+id/con"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="40dp"
+                android:layout_toLeftOf="@+id/spinnersize"
+                android:layout_toStartOf="@+id/spinnersize" />
+
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:id="@+id/spinnercon"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/size"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignLeft="@+id/spinnersize"
+                android:layout_alignStart="@+id/spinnersize">
+
+            </Spinner>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                android:layout_below="@id/con"
+                android:textSize="19sp"
+                android:id="@+id/location"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="40dp"
+                />
+
+
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:id="@+id/spinnerlocation"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/con"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignLeft="@+id/spinnercon"
+                android:layout_alignStart="@+id/spinnercon">
+            </Spinner>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/clothes_reg_btn"
+                style="?android:textAppearanceSmall"
+                android:textColor="@color/textColor"
+                android:id="@+id/clothes_button"
+                android:layout_below="@id/location"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_selector"
+                android:textStyle="bold"
+
+                />
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
