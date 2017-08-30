@@ -36,7 +36,7 @@ public class NotificationClicked extends AppCompatActivity {
         textHead = (TextView) findViewById(R.id.textnotificationHeading);
         textContent = (TextView) findViewById(R.id.textnotification_details);
 
-        view_Needs = (Button) findViewById(R.id.viewcreatedNeeds);
+       // view_Needs = (Button) findViewById(R.id.viewcreatedNeeds);
 
         textHead.setText("HELLO " + MyService.r_email + " YOUR NEED HAS BEEN FINALLY MET!");
 
