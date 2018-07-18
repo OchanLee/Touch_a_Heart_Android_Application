@@ -10,7 +10,7 @@
     <string name="quantity">Quantity:</string>
     <string name="receipientEmail">Receipient Email ID:</string>
     <string name="describe">Describe your situation:</string>
-    <string name="createcategory">Please choose the category of the item you would like to Create:</string>
+    <string name="createcategory">Please choose the category of the item you would like to Get:</string>
     <string name="donatecategory">Please choose the category of the item you would like to Donate:</string>
     <string name="remail">Email ID:</string>
     <string name="prompt_email">Email</string>

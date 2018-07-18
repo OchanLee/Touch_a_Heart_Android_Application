@@ -44,7 +44,7 @@ public class MyService extends JobService {
     private static final int uniqueID = 45612;
     String json_string;
     public static String email, type, gender, size, condition, location, image_path, r_email, dbSting, r_ID, d_ID;
-    public static int quantity,r_quantity;
+    public static int quantity, r_quantity;
     MyDBHandler dbHandler;
 
 
@@ -56,7 +56,7 @@ public class MyService extends JobService {
 
 
         new BackgroundTask(this).execute();
-       // makeText(this, "onStartJob", LENGTH_SHORT).show();
+        //makeText(this, "onStartJob", LENGTH_SHORT).show();
 
 
         jobFinished(jobParameters, false);
@@ -74,7 +74,7 @@ public class MyService extends JobService {
     private class BackgroundTask extends AsyncTask<Void, Void, String> {
 
 
-        String json_url = "http://"+MainTabbedActivity.url_address+"/touchaheartapp/notification.php";
+        String json_url = "http://" + MainTabbedActivity.url_address + "/touchaheartapp/notification.php";
         private MyService myService;
 
 
@@ -152,7 +152,7 @@ public class MyService extends JobService {
                         r_quantity = JO.getInt("rquantity");
 
                         if (dbSting.toString().trim().equals(r_email)) {
-                           // Toast.makeText(myService, r_email, Toast.LENGTH_LONG).show();
+                            // Toast.makeText(myService, r_email, Toast.LENGTH_LONG).show();
                             break;
                         }
 
@@ -168,14 +168,12 @@ public class MyService extends JobService {
                         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
 
-
                         notification.setAutoCancel(true);
                         notification.setSmallIcon(R.drawable.tahnoticon);
                         notification.setTicker("A donation has been made");
                         notification.setWhen(System.currentTimeMillis());
                         notification.setContentTitle("Need has been met!");
                         notification.setContentText("Touch to view message");
-
                         notification.setSound(soundUri);
 
 

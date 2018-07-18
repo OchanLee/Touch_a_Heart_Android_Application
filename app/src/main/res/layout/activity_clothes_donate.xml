@@ -55,28 +55,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/remail"
-                android:textColor="#333"
-                android:layout_below="@id/imageclothesdonate"
-                android:layout_marginTop="10dp"
-                android:textSize="19sp"
-                android:id="@+id/donatorEmail"
-                android:layout_alignParentLeft="true"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="false"
-                android:id="@+id/editdonatoremaildonate"
-                android:inputType="textEmailAddress"
-                android:layout_below="@id/donatorEmail"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/receipientEmail"
-                android:layout_below="@id/editdonatoremaildonate"
+                android:layout_below="@id/imageclothesdonate"
                 android:textSize="19sp"
                 android:id="@+id/receipientEmail"
                 android:layout_alignParentLeft="true"

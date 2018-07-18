@@ -67,9 +67,9 @@ public class ClothesDonateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clothes_donate);
 
-        DEmail = (EditText) findViewById(R.id.editdonatoremaildonate);
+       // DEmail = (EditText) findViewById(R.id.editdonatoremaildonate);
         REmail = (EditText) findViewById(R.id.editreceipientmaildonate);
-        DEmail.setText(MainTabbedActivity.editEmail);
+        //DEmail.setText(MainTabbedActivity.editEmail);
         REmail.setText("Any");
 
 

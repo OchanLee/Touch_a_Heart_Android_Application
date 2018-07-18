@@ -34,7 +34,7 @@ public class MainTabbedActivity extends AppCompatActivity {
 
     private static final int JOB_ID = 100;
     public static String editEmail;
-    public static String url_address = "192.168.137.8"; // 192.168.42.57     wireless     192.168.137.8
+    public static String url_address = "192.168.42.18"; // 192.168.42.57     wireless     192.168.137.8
 
     private JobScheduler mJobScheduler;
     MyDBHandler dbHandler;
