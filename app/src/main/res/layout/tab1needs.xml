@@ -26,6 +26,17 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
+    <TextView
+        android:id="@+id/refreshpage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/refresh"
+        android:layout_centerHorizontal="true"
+        android:text="Please swipe down to refresh content"
+        android:textAlignment="center"
+        android:textColor="@color/textColor"
+        android:textSize="16dp" />
+
 
 
 
