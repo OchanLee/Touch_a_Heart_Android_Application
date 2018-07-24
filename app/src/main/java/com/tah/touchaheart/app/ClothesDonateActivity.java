@@ -51,6 +51,7 @@ public class ClothesDonateActivity extends AppCompatActivity {
     private File file;
     private Uri file_uri;
     private EditText DEmail, REmail;
+    Boolean clicked = false;
     ProgressDialog progressDialog;
     Activity activity;
     AlertDialog.Builder builder;
@@ -187,35 +188,63 @@ public class ClothesDonateActivity extends AppCompatActivity {
 
 
 
-        donateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                            donateButton.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
 
-                if (DEmail.getText().toString().equals("")||REmail.getText().toString().equals("")|| spinnerType.getSelectedItem().toString().equals("")|| spinnerGender.getSelectedItem().toString().equals("")|| spinnerQuantity.getSelectedItem().toString().equals("")|| spinnerSize.getSelectedItem().toString().equals("")|| spinnerCondition.getSelectedItem().toString().equals("")|| spinnerLocation.getSelectedItem().toString().equals("")){
+                                    if (clicked) {
 
-                    builder = new AlertDialog.Builder(ClothesDonateActivity.this);
-                    builder.setTitle("Something went wrong!!");
-                    builder.setMessage("Please fill in all the fields....");
-                    builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                        }
-                    });
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
-                } else
-                {
-                    BackgroundTaskDonate backgroundTaskDonate = new BackgroundTaskDonate(ClothesDonateActivity.this);
-                    backgroundTaskDonate.execute("clothesdonate",REmail.getText().toString(),DEmail.getText().toString(),spinnerType.getSelectedItem().toString(),spinnerGender.getSelectedItem().toString(),spinnerQuantity.getSelectedItem().toString(),spinnerSize.getSelectedItem().toString(),spinnerCondition.getSelectedItem().toString(),spinnerLocation.getSelectedItem().toString());
-                }
+                                        if (REmail.getText().toString().equals("") || spinnerType.getSelectedItem().toString().equals("") || spinnerGender.getSelectedItem().toString().equals("") || spinnerQuantity.getSelectedItem().toString().equals("") || spinnerSize.getSelectedItem().toString().equals("") || spinnerCondition.getSelectedItem().toString().equals("") || spinnerLocation.getSelectedItem().toString().equals("")) {
+
+                                            builder = new AlertDialog.Builder(ClothesDonateActivity.this);
+                                            builder.setTitle("Something went wrong!!");
+                                            builder.setMessage("Please fill in all the fields....");
+                                            builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialogInterface, int i) {
+                                                    dialogInterface.dismiss();
+                                                }
+                                            });
+                                            AlertDialog alertDialog = builder.create();
+                                            alertDialog.show();
+                                        } else {
+                                            BackgroundTaskDonate backgroundTaskDonate = new BackgroundTaskDonate(ClothesDonateActivity.this);
+                                            backgroundTaskDonate.execute("clothesdonate", REmail.getText().toString(), MainTabbedActivity.editEmail, spinnerType.getSelectedItem().toString(), spinnerGender.getSelectedItem().toString(), spinnerQuantity.getSelectedItem().toString(), spinnerSize.getSelectedItem().toString(), spinnerCondition.getSelectedItem().toString(), spinnerLocation.getSelectedItem().toString(), encoded_string, image_name);
+                                        }
+
+                                    }else {
+
+
+
+                                        if (REmail.getText().toString().equals("") || spinnerType.getSelectedItem().toString().equals("") || spinnerGender.getSelectedItem().toString().equals("") || spinnerQuantity.getSelectedItem().toString().equals("") || spinnerSize.getSelectedItem().toString().equals("") || spinnerCondition.getSelectedItem().toString().equals("") || spinnerLocation.getSelectedItem().toString().equals("")) {
+
+                                            builder = new AlertDialog.Builder(ClothesDonateActivity.this);
+                                            builder.setTitle("Something went wrong!!");
+                                            builder.setMessage("Please fill in all the fields....");
+                                            builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialogInterface, int i) {
+                                                    dialogInterface.dismiss();
+                                                }
+                                            });
+                                            AlertDialog alertDialog = builder.create();
+                                            alertDialog.show();
+                                        } else {
+                                            BackgroundTaskDonate backgroundTaskDonate = new BackgroundTaskDonate(ClothesDonateActivity.this);
+                                            backgroundTaskDonate.execute("clothesdonateNoImage", REmail.getText().toString(), MainTabbedActivity.editEmail, spinnerType.getSelectedItem().toString(), spinnerGender.getSelectedItem().toString(), spinnerQuantity.getSelectedItem().toString(), spinnerSize.getSelectedItem().toString(), spinnerCondition.getSelectedItem().toString(), spinnerLocation.getSelectedItem().toString());
+                                        }
+
+
+
+                                    }
 
 
 
 
+                                }
+                            });
 
-            }
-        });
+
 
 
 
@@ -228,6 +257,7 @@ public class ClothesDonateActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                clicked = true;
                 Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 getFileUri();
                 i.putExtra(MediaStore.EXTRA_OUTPUT, file_uri);
@@ -276,6 +306,7 @@ public class ClothesDonateActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void aVoid) {
+/*
 
             donateButton.setOnClickListener(new View.OnClickListener() {
 
@@ -309,6 +340,7 @@ public class ClothesDonateActivity extends AppCompatActivity {
                 }
             });
 
+*/
         }
     }
 
@@ -316,7 +348,7 @@ public class ClothesDonateActivity extends AppCompatActivity {
 
 
         RequestQueue requestQue = Volley.newRequestQueue(this);
-        StringRequest request = new StringRequest(Request.Method.POST,"http://192.168.42.57/touchaheartapp/donate.php",
+        StringRequest request = new StringRequest(Request.Method.POST,"http://192.168.42.18/touchaheartapp/donate.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

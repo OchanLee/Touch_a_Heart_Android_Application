@@ -75,6 +75,71 @@ public class BackgroundTaskDonate extends AsyncTask<String,Void,String>{
                 String d_size = params[6];
                 String d_condition = params[7];
                 String d_location = params[8];
+                String encoded_string = params[9];
+                String image_name = params[10];
+                String data = URLEncoder.encode("r_email", "UTF-8")+"="+URLEncoder.encode(r_email,"UTF-8")+"&"+
+                        URLEncoder.encode("d_email", "UTF-8")+"="+URLEncoder.encode(d_email,"UTF-8")+"&"+
+                        URLEncoder.encode("d_type", "UTF-8")+"="+URLEncoder.encode(d_type,"UTF-8")+"&"+
+                        URLEncoder.encode("d_gender", "UTF-8")+"="+URLEncoder.encode(d_gender,"UTF-8")+"&"+
+                        URLEncoder.encode("d_quantity", "UTF-8")+"="+URLEncoder.encode(d_quantity,"UTF-8")+"&"+
+                        URLEncoder.encode("d_size", "UTF-8")+"="+URLEncoder.encode(d_size,"UTF-8")+"&"+
+                        URLEncoder.encode("d_condition", "UTF-8")+"="+URLEncoder.encode(d_condition,"UTF-8")+"&"+
+                        URLEncoder.encode("d_location", "UTF-8")+"="+URLEncoder.encode(d_location,"UTF-8")+"&"+
+                        URLEncoder.encode("encoded_string", "UTF-8")+"="+URLEncoder.encode(encoded_string,"UTF-8")+"&"+
+                        URLEncoder.encode("image_name", "UTF-8")+"="+URLEncoder.encode(image_name,"UTF-8")+"&";
+                bufferedWriter.write(data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                StringBuilder stringBuilder = new StringBuilder();
+                String line = "";
+                while ((line=bufferedReader.readLine())!= null)
+                {
+
+                    stringBuilder.append(line+"\n");
+                }
+
+                httpURLConnection.disconnect();
+                Thread.sleep(5000);
+                Log.d("Test", "Test 3 pass");
+                return  stringBuilder.toString().trim();
+
+
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
+
+
+        if (method.equals("clothesdonateNoImage"))
+        {
+            try {
+                URL url = new URL(clothessubmit_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
+                String r_email = params[1];
+                String d_email = params[2];
+                String d_type = params[3];
+                String d_gender = params[4];
+                String d_quantity = params[5];
+                String d_size = params[6];
+                String d_condition = params[7];
+                String d_location = params[8];
+
                 String data = URLEncoder.encode("r_email", "UTF-8")+"="+URLEncoder.encode(r_email,"UTF-8")+"&"+
                         URLEncoder.encode("d_email", "UTF-8")+"="+URLEncoder.encode(d_email,"UTF-8")+"&"+
                         URLEncoder.encode("d_type", "UTF-8")+"="+URLEncoder.encode(d_type,"UTF-8")+"&"+
@@ -112,6 +177,13 @@ public class BackgroundTaskDonate extends AsyncTask<String,Void,String>{
                 e.printStackTrace();
             }
         }
+
+
+
+
+
+
+
 
 
         return null;
