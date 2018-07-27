@@ -89,7 +89,7 @@ public class DataParser extends AsyncTask<Void,Void,Boolean> {
                 String rquantity = jo.getString("rquantity");
                 String rsize = jo.getString("rsize");
                 String rcondition = jo.getString("rcondition");
-                //String imageUrl = jo.getString("image_path");
+            //    String imageUrl = jo.getString("image_path");     //added to see what happens
 
                 donations= new Donations();
 
@@ -102,7 +102,7 @@ public class DataParser extends AsyncTask<Void,Void,Boolean> {
                 donations.setQuantity(rquantity);
                 donations.setSize(rsize);
                 donations.setCondition(rcondition);
-               // donations.setImageUrl(imageUrl);
+             //   donations.setImageUrl(imageUrl);                        //added to see what happens
 
                 donationss.add(donations);
 

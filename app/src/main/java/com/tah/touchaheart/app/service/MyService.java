@@ -4,6 +4,7 @@ import me.tatarka.support.job.JobParameters;
 import me.tatarka.support.job.JobService;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -12,12 +13,16 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.NotificationCompat;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tah.touchaheart.R;
+import com.tah.touchaheart.app.ClothesActivity;
+import com.tah.touchaheart.app.LoginActivity;
 import com.tah.touchaheart.app.MainTabbedActivity;
+import com.tah.touchaheart.app.RegisterActivity;
 import com.tah.touchaheart.app.database.MyDBHandler;
 
 import org.json.JSONArray;
@@ -41,11 +46,12 @@ import static android.widget.Toast.*;
 
 public class MyService extends JobService {
     NotificationCompat.Builder notification;
-    private static final int uniqueID = 45612;
+    private static final int uniqueID = 45;
     String json_string;
-    public static String email, type, gender, size, condition, location, image_path, r_email, dbSting, r_ID, d_ID;
+    public static String email, type, gender, size, condition, location, image_path, r_email, dbSting, r_ID, d_ID, CHANNEL_ID;
     public static int quantity, r_quantity;
     MyDBHandler dbHandler;
+
 
 
     @Override
@@ -55,8 +61,9 @@ public class MyService extends JobService {
         dbSting = dbHandler.databasetostring();
 
 
-        new BackgroundTask(this).execute();
+        new BackgroundTaskService(this).execute();
         //makeText(this, "onStartJob", LENGTH_SHORT).show();
+
 
 
         jobFinished(jobParameters, false);
@@ -69,13 +76,13 @@ public class MyService extends JobService {
         return false;
     }
 
-    AsyncTask myAsyncTask = new BackgroundTask(this);
+    AsyncTask myAsyncTask = new BackgroundTaskService(this);
 
-    private class BackgroundTask extends AsyncTask<Void, Void, String> {
+    private class BackgroundTaskService extends AsyncTask<Void, Void, String> {
 
 
         String json_url = "http://" + MainTabbedActivity.url_address + "/touchaheartapp/notification.php";
-        private MyService myService;
+        MyService myService;
 
 
         @Override
@@ -108,7 +115,7 @@ public class MyService extends JobService {
             return null;
         }
 
-        public BackgroundTask(MyService myService) {
+        public BackgroundTaskService(MyService myService) {
             this.myService = myService;
         }
 
@@ -128,8 +135,9 @@ public class MyService extends JobService {
 
             if (result == null) {
 
-            } else {
+                //Toast.makeText(myService, "no jason data here", Toast.LENGTH_LONG).show();
 
+            } else {
                 try {
 
                     JSONObject jsonObject = new JSONObject(result);
@@ -161,35 +169,49 @@ public class MyService extends JobService {
 
 
                     if (dbSting.toString().trim().equals(r_email)) {
-                        notification = new NotificationCompat.Builder(myService);
+
+
+                        //old notification
 
 
                         // define sound URI, the sound to be played when there's a notification
                         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
+                        Intent intent = new Intent(MyService.this, NotificationClicked.class);
+                        PendingIntent pendingIntent = PendingIntent.getActivity(MyService.this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+                        notification = new NotificationCompat.Builder(MyService.this);
 
                         notification.setAutoCancel(true);
                         notification.setSmallIcon(R.drawable.tahnoticon);
                         notification.setTicker("A donation has been made");
                         notification.setWhen(System.currentTimeMillis());
-                        notification.setContentTitle("Need has been met!");
+                        notification.setContentTitle("Received a Donation!");
                         notification.setContentText("Touch to view message");
                         notification.setSound(soundUri);
-
-
-                        Intent intent = new Intent(myService, NotificationClicked.class);
-                        PendingIntent pendingIntent = PendingIntent.getActivity(myService, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                         notification.setContentIntent(pendingIntent);
 
                         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                         nm.notify(uniqueID, notification.build());
 
+                        UpdateMethods updateMethods = new UpdateMethods(UpdateMethods.context);
+                        updateMethods.updateDatabaseNotif();
+
+                        //end of old notification
                     }
 
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+
+
+
+                //String b = updateMethods.updateDatabaseNotif();
+
+               // Toast.makeText(myService,b,Toast.LENGTH_LONG).show();
+
 
             }
 

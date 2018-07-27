@@ -27,15 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        SplashScreen
-
-        <activity android:name=".app.LoginActivity">
-
-        </activity>
-
-
+        <activity android:name=".app.LoginActivity" />
         <activity android:name=".app.RegisterActivity" />
+
         <activity
             android:name=".app.MainTabbedActivity"
             android:label="@string/title_activity_main_tabbed"
@@ -45,13 +39,12 @@
         <activity android:name=".app.ShoesDonateActivity" />
         <activity android:name=".app.ClothesDonateActivity" />
         <activity android:name=".app.retrieve.DetailActivity" />
+        <activity android:name=".app.service.NotificationClicked" />
 
         <service
             android:name=".app.service.MyService"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-
-        <activity android:name=".app.service.NotificationClicked" />
 
     </application>
 

@@ -282,7 +282,7 @@ public class ClothesDonateActivity extends AppCompatActivity {
         if (requestCode == 10 && resultCode == RESULT_OK){
 
             bitmap = BitmapFactory.decodeFile(file_uri.getPath());
-            imageViewClothes.setImageBitmap(bitmap);
+            imageViewClothes.setImageBitmap(bitmap.createScaledBitmap(bitmap, 120, 100, false));
             new Encode_image().execute();
         }
     }

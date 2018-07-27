@@ -1,10 +1,17 @@
 package com.tah.touchaheart.app;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ComponentName;
+
+import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -26,12 +33,14 @@ import com.tah.touchaheart.app.database.MyDBHandler;
 import com.tah.touchaheart.app.database.Products;
 import com.tah.touchaheart.app.service.MyService;
 import com.tah.touchaheart.app.service.NotificationClicked;
+import com.tah.touchaheart.app.service.UpdateMethods;
 
 import me.tatarka.support.job.JobInfo;
 import me.tatarka.support.job.JobScheduler;
 
 public class MainTabbedActivity extends AppCompatActivity {
-
+    NotificationCompat.Builder notification;
+    private static final int uniqueID = 45;
     private static final int JOB_ID = 100;
     public static String editEmail;
     public static String url_address = "192.168.42.18"; // 192.168.42.57     wireless     192.168.137.8
@@ -100,13 +109,26 @@ public class MainTabbedActivity extends AppCompatActivity {
             }
         });*/
 
+//new method
+
+/*
+        UpdateMethods updateMethods = new UpdateMethods(UpdateMethods.context);
+
+        String b = updateMethods.updateDatabaseNotif();
+
+        Toast.makeText(this,b,Toast.LENGTH_LONG).show();
+
+        */
+
+
+
     }
 
 
     private void constructJob() {
 
         JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, new ComponentName(this, MyService.class));
-        builder.setPeriodic(2000)
+        builder.setPeriodic(5000)
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
                 .setPersisted(true);
 

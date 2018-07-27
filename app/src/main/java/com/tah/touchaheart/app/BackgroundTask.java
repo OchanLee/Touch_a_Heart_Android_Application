@@ -188,7 +188,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
                 Intent intent = new Intent(activity, MainTabbedActivity.class);
                 intent.putExtra("message",message);
                 activity.startActivity(intent);
-                Toast.makeText(ctx, "Log in Success. ", Toast.LENGTH_LONG).show();
+                Toast.makeText(ctx, "Welcome to Touch A Heart!", Toast.LENGTH_LONG).show();
 
 
 

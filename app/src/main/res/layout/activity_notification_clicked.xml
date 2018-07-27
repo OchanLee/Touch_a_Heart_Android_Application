@@ -27,10 +27,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/cameraImage"
+                />
+
             <TextView
                 android:id="@+id/textnotificationHeading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/cameraImage"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textAllCaps="true"
